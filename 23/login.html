@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Website - Login</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .form-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+    }
+    input[type="email"], input[type="password"], input[type="submit"], .google-btn {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    .google-btn {
+        background-color: #db4437;
+        color: white;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+    }
+    .google-btn:hover {
+        background-color: #c13584;
+    }
+    .signup-link {
+        text-align: center;
+    }
+    .signup-link a {
+        color: #4CAF50;
+    }
+    @media screen and (max-width: 600px) {
+        .form-container {
+            width: 80%;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="form-container">
+    <h2>Login</h2>
+    <form action="/login" method="post">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" value="Login">
+    </form>
+    <hr>
+    <button class="google-btn" onclick="redirectToGoogle()">Login with Google</button>
+    <div class="signup-link">
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+</div>
+
+<script>
+    function redirectToGoogle() {
+        // Redirect to Google login page
+        window.location.href = "https://accounts.google.com/";
+    }
+</script>
+
+</body>
+</html>

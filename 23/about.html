@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare_About_Us!</title>
+    <style>
+        /* For screens smaller than 600px */
+/* For screens smaller than 600px */
+@media only screen and (max-width: 600px) {
+  body {
+    min-width: unset;
+    max-width: unset;
+    margin: 0 auto;
+  }
+
+  .user-group, .quick-access {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .user-group > li, .quick-access > li {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    border: none;
+  }
+
+  .user-group > li:last-child, .quick-access > li:last-child {
+    margin-bottom: 10px;
+  }
+
+  .banner > a {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .banner > a:nth-child(1),
+  .banner > a:nth-child(2) {
+    width: 100%;
+  }
+
+  .footer > ul {
+    text-align: center;
+  }
+
+  /* Adjustments for smaller screens */
+  .words > h2 {
+    font-size: 24px;
+    line-height: 40px;
+  }
+
+  .words > ul {
+    font-size: 14px;
+  }
+
+  .words > li {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .banner > a > img {
+    display: block;
+    width: 100%;
+  }
+
+  /* Adjustments for footer */
+  .footer {
+    background-size: cover;
+    padding: 20px 0;
+  }
+
+  .footer > span {
+    font-size: 14px;
+  }
+
+  .footer > .name {
+    font-size: 24px;
+  }
+
+  .footer > .social-media > a {
+    font-size: 24px;
+  }
+
+  .footer > .copyright {
+    font-size: 12px;
+  }
+}
+
+
+
+/* set body dimension and background */
+body { 
+
+  margin: 5px auto 5px auto;
+  background-color: white; 
+}
+
+/* header is block */
+.header { 
+  display: block;
+}
+
+/* Add your CSS rules based on the instructions in comments. */
+
+/* user-group links and quick-access links share the row */
+/* TODO - use inline-block and width 55% */
+.user-group {
+  display: inline-block;
+  width: 55%;
+}
+
+/* TODO - use inline-block and width 40% */
+.quick-access {
+  display: inline-block;
+  width: 40%;
+  
+  /* quick-access links align to the right */  
+  text-align: right;
+}
+
+/* user group links share the row among themselves */
+/* TODO - use inline-block */
+/* TODO - add left and right padding each 5px */
+/* TODO - add right border as seperation bar with color steelblue */
+.user-group > li {
+  display: inline-block;
+  padding: 0 5px 0 5px;
+   border: 1px solid steelblue;
+  border-width: 0 1px 0 0;
+}
+
+/* remove last bar */
+/* TODO - set border width 0 */
+.user-group > li:last-child {
+  border-width: 0;
+}
+
+/* control the style of link texts */
+/* TODO - set text color steelblue and font-size 75% */
+.user-group > li > a {
+  
+  /* set font type */
+  color: darkblue;
+  font-size: 75%;
+  font-family: Muli;
+  /* remove underlie from links */
+  text-decoration: none;
+}
+
+/* quick-access links share the row among themselves */
+/* TODO - use inline-block */
+/* TODO - add left and right padding each 5px */
+/* TODO - add right border as seperation bar with color grey */
+.quick-access > li {
+  display:inline-block;
+  padding: 0 5px 0 5px;
+  border: 1px solid grey;
+  border-width: 0 1px 0 0;
+}
+
+/* remove last bar */
+/* TODO - set border width 0 */
+.quick-access > li:last-child {
+  border-width: 0;
+}
+
+/* control link style */
+/* TODO - set text color and font-size */  
+.quick-access > li > * {
+  color: darkblue;
+  font-size: 68%;
+  /* set font type */
+  font-family: Muli;
+  /* remove underlie from links */
+  text-decoration: none;
+}
+
+/* banner is another row itself */
+/* TODO - set display block and margin 20px top/bottome and 10px left/right */
+.banner { 
+  display: inline-block;
+  margin: 20px 10px 20px 10px;
+  
+}
+
+/* two links/images inthe banner share the row */
+/* TODO - use inline block */
+.banner > a { 
+  display: inline-block
+    
+}
+
+/* TODO - set first logo width 30% and 2nd 66% */
+.banner > a:nth-child(1)  {
+  width: 30%;
+}
+.banner > a:nth-child(2)  { 
+  width: 66%;
+}
+
+/* TODO - set display block for image since it is the only child and does NOT share the row with anyone under its parent. */
+.banner > a > img {
+  display: inline-block;
+}
+.banner>a2{
+  padding: 200px;
+  
+}
+.banner>a3{
+  color:green;
+  font-size: 30px;
+  padding:800px;
+  
+}
+  .quick-access> sli {
+    color: darkgreen;    
+    font-size: 25px;      
+  }
+
+/*Navbar */
+* { padding: 0; margin: 0; }
+body { background-color: white; }
+.menu {  
+  /* Use display: block, since it will have the whole row for itself. */
+  display: block;
+  height: auto;
+  background-color: darkgreen;
+  text-align:center;
+}
+
+.menu > li {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 15px;
+}
+.menu > li:hover {
+  color: darkblue;
+  background-color: lightgreen;
+}
+
+
+/* Select the span tag to control the color of the top level menu item. Notice, the text is inside of the span tag. */
+.menu > li > span {
+  /* Use display: inline; without width and height value since they have no effects on inline element. Inline elements's width and height is controlled by browsers. */
+  display: inline;
+  color: white;
+  font-family:Amaranth;
+ font-size:20px;
+  padding:71px;
+}
+
+.menu > li > a {
+  display: inline;
+  color: white;
+  font-family:Amaranth;
+ font-size:20px;
+  text-decoration:none;
+  padding:71px;
+}
+.menu > li:hover > span {
+  color: darkblue;
+}
+.menu > li:hover > a {
+  color: darkblue;
+}
+
+/* Select 2nd level menu using path selector */
+.menu > li > ul {
+font-family:Amaranth;
+ font-size:18px;
+  display: none;
+}
+
+/* Here is how to do dropdown menu */
+/* Step 1 - set 1st level menu item position relative, so 2nd level menu position can be relative to it. */
+.menu > li {
+  position: relative;
+}
+
+/* 2nd level menu */
+.menu > li:hover > ul {
+  display: block;
+  background-color: lightgreen;
+  color: darkblue;
+  width:241px;
+  z-index:30;
+  
+  /* Step 2 - set 2nd level menu position absolute, so it's position is relative to 1st level menu position, only when 1st level menu position is NOT static (relative or absolute) */
+  position: absolute;
+  
+  /* further use top and left (bottome/right) to control exact position */
+  top: 3em;
+  left: 0;
+}
+
+/* TODO - Align 2nd menu to the right edge of 1st level menu */
+.menu > li:last-child:hover > ul {
+  left: auto;
+  right: 0;
+  /* TODO - set left to be auto */
+  /* TODO - set right to be 0 to align on right edge */
+}
+
+.menu > li > ul > li {
+  padding: 0.5em;
+
+  /* remove bullets in front of list items */
+  list-style: none;
+}
+
+.menu > li > ul > li > a {
+  color: darkblue;
+  
+  /* remove underline of links */
+  text-decoration: none;
+  
+  /* prevent link text from wrapping up to multiple lines */
+  white-space: nowrap;
+}
+
+/* words*/
+h1{
+ color:darkblue;
+ font-size: 40px;
+ text-align:center;
+ line-height: 100px;
+ font-family:Courgette;
+}
+.words{
+  font-family:Muli;
+}
+.words>h2{
+  color:darkblue;
+  line-height:60px
+}
+.words>ul{
+  color:grey;
+ 
+}
+.words>li{
+  color:grey;
+   line-height:30px;
+}
+
+
+.fotorama{
+  display: block;
+  width: 600px;
+  margin: 0 auto;
+}
+
+/*footer*/
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.footer {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: lightblue;
+  
+  background-size: contain;
+  background-position: top center;
+  background-repeat: repeat;  
+}
+
+
+.footer > span {
+  display: block;
+  color: #dddddd;
+  font-family: sans-serif;
+}
+
+.footer > span > a {
+  color: steelblue;
+  text-decoration: none;
+}
+
+
+.footer > .name {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 200%;
+  font-family: cookie;
+  color:darkblue;
+}
+
+.footer > .social-media { margin-bottom: 10px; }
+.footer > .social-media > a {
+  padding: 0 5px;
+  font-size: 38px;
+  color:darkblue;
+}
+
+
+.footer > .copyright { font-size: 60%; }
+
+
+.footer > .quick-access > a {
+  border-right: 1px solid ;
+  padding: 0 1em;
+  font-size: 60%;
+  
+}
+.footer > .quick-access > a:last-child { border: 0; }
+.footer>ul{
+  color:darkblue;
+}
+.words{
+    padding: 10px;
+}
+ 
+
+    </style>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+      
+      <!-- nothing to do here -->
+     
+      <div class="row" style="background-color: rgb(48, 195, 244);"  >
+        <div class="col-4 logo_img"  >
+          <img src="pic/download (2).jpg"  alt=""style="float: left;" >
+        </div>
+        <div class="col-4">
+          <center> <h5 style="margin-top: 5px;">MediCare</h5></center>
+          <form class="form-inline" action="/action_page.php" style="justify-content: center; margin-top: 40px;">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search product">
+            <button class="btn btn-success" type="submit">Search</button>
+          </form>
+        </div>
+        <div class="col-4">
+          <div style="text-align: center; margin-top: 5%;">   
+            <button type="button" class="btn btn-outline-light"><a href="login.html">login</a> </button>
+            <button type="button" class="btn btn-outline-warning">Add to card </button>
+          
+          </div>
+        </div>
+      </div>  
+    </div>
+   
+    <!-- navigation bar=*Home,Orders,Help,Contact Us -->
+    <div class="navbar" style="border: 1px solid black;">
+       <div class="row" >
+        <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ordder_histioy.html">Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us!</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+          </ul>
+       </div>
+    </div>
+
+     
+        
+      <!-- Writing-->
+      <h1>About Us!</h1>
+      <div class = "words">
+        <a href="">
+          <img src="http://fgmlandscaping.com/_imgstore/4/1775944/page_about-us_fD5EVcQ5GgJqM8zD9iGMC/FB_JDYpc0h309S4qz1p-JjMqH-U.png" alt="" />
+        </a>
+        <h1>About MediCare Online</h1>
+        <p>Welcome to MediCare Online, your trusted destination for all your medical and pharmaceutical needs. At MediCare Online, we are dedicated to providing convenient access to high-quality healthcare products and services from the comfort of your home.</p>
+    
+        <h2>Our Mission</h2>
+        <p>Our mission at MediCare Online is to empower individuals to take control of their health and well-being by offering a comprehensive range of medical supplies, prescription medications, and healthcare resources. We strive to deliver exceptional customer service and reliable healthcare solutions to enhance the lives of our customers.</p>
+    
+        <h2>What We Offer</h2>
+        <ul>
+            <li>Medical Supplies: From first aid kits to mobility aids, we provide a variety of medical supplies to support your health and wellness journey.</li>
+            <li>Prescription Medications: Our online pharmacy offers a convenient way to refill prescriptions and order medications prescribed by your healthcare provider.</li>
+            <li>Health Supplements: Explore our range of vitamins, supplements, and wellness products to support your nutritional needs and promote overall health.</li>
+            <li>Healthcare Resources: Access informative articles, guides, and tools on our website to help you make informed decisions about your health and well-being.</li>
+        </ul>
+    
+        <h2>Quality Assurance</h2>
+        <p>At MediCare Online, we prioritize the quality and safety of our products and services. We source our medications and supplies from reputable manufacturers and ensure compliance with strict quality standards and regulations. Your health and satisfaction are our top priorities, and we are committed to maintaining the highest levels of excellence in everything we do.</p>
+    
+        <h2>Get in Touch</h2>
+        <p>Have questions or need assistance? Our friendly customer support team is here to help! Contact us via phone, email, or live chat, and we'll be happy to assist you.</p>
+    
+        <p>Thank you for choosing MediCare Online as your trusted partner in health and wellness. We look forward to serving you and helping you live a healthier, happier life.</p> 
+        </div>
+        
+       
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      
+      <!-- load fotorama plugin JavaScript code -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.js"></script>
+        
+          
+        <!-- footer -->
+
+        <div class="real" style="margin-top: 20px;">
+          <footer class="footer">
+              <div class="footer__container container grid">
+                  <div class="footer__content grid">
+                      <a href="" class="footer__logo">Pharama</a>
+              
+                      <ul class="footer__links">
+                          <li><a href="about.html" class="footer__link">About Us</a></li>
+                          <li><a href="ordder_histioy.html" class="footer__link">Orders</a></li>
+                          <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+                      </ul>
+              
+                      <div class="footer__social">
+                          <a href="#" class="footer__social-link">
+                              <i class="ri-facebook-circle-fill"> </i>
+                          </a>
+                          <a href="#" class="footer__social-link">
+                              <i class="ri-instagram-fill"></i>
+                          </a>
+                          <a href="#" class="footer__social-link">
+                              <i class="ri-twitter-x-line"></i>
+                          </a>
+                          <a href="#" class="footer__social-link">
+                              <i class="ri-linkedin-box-fill"></i>
+                          </a>
+                      </div>
+                  </div>
+                  <span class="footer__copy">© 2024 Your Website. All Rights Reserved.</span>
+              </div>
+          </footer>
+      </div>
+    
+</body>
+</html>
