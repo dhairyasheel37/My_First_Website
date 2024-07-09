@@ -1132,3 +1132,34 @@ background-color: #ccc;
       width: 220px; /* Two cards per row on tablets */
   }
 }
+
+
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Style for the login and add to cart buttons */
+.btn-outline-light, .btn-outline-warning {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.btn-outline-light a, .btn-outline-warning a {
+    color: inherit;
+    text-decoration: none;
+}
