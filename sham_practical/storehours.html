@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Hours | Pizza Palace</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: #333;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff7e5f;
+        }
+
+        /* Toggle Menu for Mobile */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: white;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                padding: 10px 20px;
+                gap: 15px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            nav ul li {
+                display: block;
+                text-align: right;
+            }
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+            padding: 10px;
+            font-style: oblique;
+        }
+
+        .hours {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+        /* Padding for the .hours section only on tablets and mobile */
+@media (max-width: 1024px) {
+    .hours {
+        padding-bottom: 100px; /* Adds padding only on smaller devices */
+    }
+
+    .hours .day:last-child {
+        margin-bottom: 30px; /* Adds spacing specifically for the Sunday section */
+    }
+}
+
+        .hours .day {
+            background-color: #ff6347;
+            color: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .hours .day:hover {
+            background-color: #feb47b;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .hours .day p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#" class="logo">Pizzeria</a>
+        <div class="menu-toggle" id="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="storehours.html">Store Hours</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <h2>Store Hours</h2>
+
+    <div class="hours">
+        <div class="day">
+            <h3>Monday</h3>
+            <p>10:00 AM - 10:00 PM</p>
+        </div>
+        <div class="day">
+            <h3>Tuesday</h3>
+            <p>10:00 AM - 10:00 PM</p>
+        </div>
+        <div class="day">
+            <h3>Wednesday</h3>
+            <p>10:00 AM - 10:00 PM</p>
+        </div>
+        <div class="day">
+            <h3>Thursday</h3>
+            <p>10:00 AM - 10:00 PM</p>
+        </div>
+        <div class="day">
+            <h3>Friday</h3>
+            <p>10:00 AM - 11:00 PM</p>
+        </div>
+        <div class="day">
+            <h3>Saturday</h3>
+            <p>10:00 AM - 11:00 PM</p>
+        </div>
+        <div class="day">
+            <h3>Sunday</h3>
+            <p>3:00 PM - 11:00 PM</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Pizza Palace | All Rights Reserved</p>
+        <p><a href="index.html">Back to Home</a> | <a href="contact.html">Contact Us</a></p>
+    </footer>
+</body>
+
+</html>

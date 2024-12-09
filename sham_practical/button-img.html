@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image as Button Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .image-button {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .image-button img {
+            width: 300px;
+            height: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-button img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Image as Button Example</h1>
+    <p>Click the image below to see it work as a button:</p>
+    
+    <!-- Image button using a button element -->
+    <button class="image-button" onclick="alert('You clicked the button!')">
+        <img src="https://via.placeholder.com/300x200.png?text=Click+Me" alt="Clickable Image Button">
+    </button>
+    
+    <p>Or click this image to navigate to a new page:</p>
+
+    <!-- Image button using a link -->
+    <a href="https://www.example.com" target="_blank">
+        <img src="https://via.placeholder.com/300x200.png?text=Go+to+Example" alt="Clickable Link" style="width: 300px; height: auto;">
+    </a>
+</body>
+</html>

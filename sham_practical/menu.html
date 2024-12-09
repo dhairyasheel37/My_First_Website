@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Menu | Pizza Palace</title>
+  <style>
+    body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: #333;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff7e5f;
+        }
+
+        /* Toggle Menu for Mobile */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: white;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                padding: 10px 20px;
+                gap: 15px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            nav ul li {
+                display: block;
+                text-align: right;
+            }
+        }
+
+    /* Menu Section */
+    .menu {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .menu h2 {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 0 10px;
+    }
+
+    .menu-item {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .menu-info {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .menu-info h3 {
+      font-size: 1.5rem;
+      color: #ff6347;
+      margin-bottom: 10px;
+    }
+
+    .menu-info p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .price-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      color: #ff6347;
+      font-weight: bold;
+    }
+
+    .order-btn {
+      background-color: #ff6347;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .order-btn:hover {
+      background-color: #e5533b;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .menu h2 {
+        font-size: 2rem;
+      }
+
+      .menu-item img {
+        height: 180px;
+      }
+
+      .menu-info h3 {
+        font-size: 1.3rem;
+      }
+
+      .menu-info p {
+        font-size: 0.9rem;
+      }
+
+      .price {
+        font-size: 1rem;
+      }
+
+      .order-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="#" class="logo">Pizzeria</a>
+    <div class="menu-toggle" id="menu-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="storehours.html">Store Hours</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+  <section class="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+      <!-- Pizza Items -->
+      <div class="menu-item">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.tHIDd7t8AMpFSjnx0NH1-AHaEK&pid=Api&P=0&h=180" alt="Margherita Pizza">
+        <div class="menu-info">
+          <h3>Margherita Pizza</h3>
+          <p>A classic pizza with fresh mozzarella, tomatoes, and basil.</p>
+          <div class="price-container">
+            <p class="price">₹199</p>
+            <a href="order.html?pizza=Margherita%20Pizza&price=199">
+              <button class="order-btn">Place Order</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="https://www.simplyrecipes.com/thmb/rLl58QZmVP4C3zSlpkKBo72EUws=/2000x1333/filters:fill(auto,1)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-3-8f256746d649404baa36a44d271329bc.jpg" alt="Pepperoni Pizza">
+        <div class="menu-info">
+          <h3>Pepperoni Pizza</h3>
+          <p>Classic pizza topped with pepperoni and mozzarella cheese.</p>
+          <div class="price-container">
+            <p class="price">₹249</p>
+            <a href="order.html?pizza=Pepperoni%20Pizza&price=249">
+              <button class="order-btn">Place Order</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="https://recipes.net/wp-content/uploads/2023/05/giordanos-veggie-supreme-pizza-recipe_ada95600cc874e3f07d322150c8bcadf.jpeg" alt="Veggie Supreme Pizza">
+        <div class="menu-info">
+          <h3>Veggie Supreme</h3>
+          <p>Loaded with bell peppers, mushrooms, olives, onions, and more!</p>
+          <div class="price-container">
+            <p class="price">₹299</p>
+            <a href="order.html?pizza=Veggie%20Supreme&price=299">
+              <button class="order-btn">Place Order</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="https://www.budgetbytes.com/wp-content/uploads/2020/06/BBQ-Chicken-Pizza-sliced.jpg" alt="BBQ Chicken Pizza">
+        <div class="menu-info">
+          <h3>BBQ Chicken Pizza</h3>
+          <p>Grilled chicken, smoky BBQ sauce, and mozzarella cheese.</p>
+          <div class="price-container">
+            <p class="price">₹399</p>
+            <a href="order.html?pizza=BBQ%20Chicken%20Pizza&price=399">
+              <button class="order-btn">Place Order</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="https://www.kayscleaneats.com/wp-content/uploads/2020/07/unadjustednonraw_thumb_a8b0.jpg" alt="Hawaiian Pizza">
+        <div class="menu-info">
+          <h3>Hawaiian Pizza</h3>
+          <p>A tropical mix of pineapple, ham, and cheese.</p>
+          <div class="price-container">
+            <p class="price">₹449</p>
+            <a href="order.html?pizza=Hawaiian%20Pizza&price=449">
+              <button class="order-btn">Place Order</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Pizza Palace | All Rights Reserved</p>
+  </footer>
+
+</body>
+
+</html>
+
